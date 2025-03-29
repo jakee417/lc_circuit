@@ -9,7 +9,7 @@ C = 1
 T = np.pi * 2
 phi = np.pi / 2
 omega = 1 / np.sqrt(L * C)
-t = np.linspace(0, T)
+t = np.linspace(0, T, 360)
 q = A * np.sin(omega * t + phi)
 i = omega * A * np.cos(omega * t + phi)
 v_L = -np.pow(omega, 2) * L * A * np.sin(omega * t + phi)
@@ -43,4 +43,5 @@ for l, x in snapshots:
         x=x, line_width=3, line_dash="dash", line_color="red", annotation_text=f"t={l}"
     )
 fig.add_hline(y=0)
+fig.update_layout(hovermode="x unified")
 fig.show()
