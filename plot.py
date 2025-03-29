@@ -28,10 +28,9 @@ fig2 = px.line(
     y=["E_C(t)", "E_L(t)", "H(t)"],
 )
 
-# Create a 1x2 subplot
+
 fig = sp.make_subplots(rows=2, cols=1)
 
-# Get the Express fig broken down as traces and add the traces to the proper plot within in the subplot
 for trace in range(len(fig1["data"])):
     fig.append_trace(fig1["data"][trace], row=1, col=1)
 
